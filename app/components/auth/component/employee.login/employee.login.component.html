@@ -1,0 +1,19 @@
+<h1>Employee Login</h1>
+{{message}}
+<form (submit)="onEmpFormSubmit()" [formGroup]="empLoginForm">
+    <label>Enter Username: </label>
+    <input type="text" name="username" formControlName="username">
+    <span *ngIf="empLoginForm.controls['username'].invalid
+          && empLoginForm.controls['username'].touched">
+      <span *ngIf="empLoginForm.controls['username'].errors['required']"> Usernameame is Required</span>
+    </span>
+    <br /><br />
+    <label>Enter Password: </label>
+    <input type="text" name="password" formControlName="password">
+    <span *ngIf="empLoginForm.controls['password'].invalid
+          && empLoginForm.controls['password'].touched">
+      <span *ngIf="empLoginForm.controls['password'].errors['required']"> Password is Required</span>
+    </span>
+    <br /><br />
+    <input type="submit" value="Login" [disabled]="!empLoginForm.valid">
+  </form>

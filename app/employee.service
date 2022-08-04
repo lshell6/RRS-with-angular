@@ -1,0 +1,32 @@
+import { Injectable } from "@angular/core";
+
+@Injectable({
+    providedIn:"root"
+})
+export class EmployeeService{
+  displayItems():void{
+    //TODO
+  } 
+  selectItem():void{
+    //TODO
+  }
+  unselectItem():void{
+    //TODO
+  }
+  viewChart():void{
+    //TODO
+  } 
+  displayCurrPts():void{
+    //TODO
+  }
+  displayTotalPts():void{
+    //TODO
+  } 
+  checkout():void{
+    //TODO
+  }
+  emptyCart():void{
+    //TODO
+    //should be called after a purchase has been completed
+  }
+}
