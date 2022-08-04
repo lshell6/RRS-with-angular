@@ -1,0 +1,51 @@
+<h1>Manager Page</h1>
+
+<form (submit) = "searchFormSubmit(searchForm)" #searchForm="ngForm">
+    <label>Enter Employee ID: </label>
+    <input type="text" name="empID" ngModel #id="ngModel" required pattern="[0-9 ]+">
+    <span *ngIf="id.invalid && id.touched">
+        <span *ngIf="id.errors['required']">ID is required</span>
+        <span *ngIf="id.errors['pattern']">ID must follow pattern: [0-9 ]+</span>
+    </span>
+</form>
+<hr>
+<!--insert serch bar here-->
+
+<!--employee tables display here-->
+
+
+<form (submit)="onMgrRegFormSubmit()" [formGroup]="managerRegForm">
+    <label>Enter Name: </label>
+    <input type="text" name="name" formControlName="name">
+    <span *ngIf="managerRegForm.controls['name'].invalid
+    && managerRegForm.controls['name'].touched">
+        <span *ngIf="managerRegForm.controls['name'].errors['required']">Name is required</span>
+        <span *ngIf="managerRegForm.controls['name'].errors['pattern']">Pattern allowed: [a-zA-Z ]+</span>
+    </span>
+    <br />
+    <label>Enter Username: </label>
+    <input type="text" name="username" formControlName="username">
+    <span *ngIf="managerRegForm.controls['username'].invalid
+    && managerRegForm.controls['username'].touched">
+        <span *ngIf="managerRegForm.controls['username'].errors['required']">Username is required</span>
+        <span *ngIf="managerRegForm.controls['username'].errors['pattern']">Pattern allowed: [a-zA-Z ]+</span>
+    </span>
+    <br />
+    <label>Enter Password: </label>
+    <input type="text" name="password" formControlName="password">
+    <span *ngIf="managerRegForm.controls['password'].invalid
+    && managerRegForm.controls['password'].touched">
+        <span *ngIf="managerRegForm.controls['password'].errors['required']">Password is required</span>
+        <span *ngIf="managerRegForm.controls['password'].errors['pattern']">Pattern allowed: [a-zA-Z ]+</span>
+    </span>
+    <br />
+    <label>Enter Password Again: </label>
+    <input type="text" name="checkPassword" formControlName="checkPassword">
+    <span *ngIf="managerRegForm.controls['checkPassword'].invalid
+    && managerRegForm.controls['checkPassword'].touched">
+        <span *ngIf="managerRegForm.controls['checkPassword'].errors['required']">Password check is required</span>
+        <span *ngIf="managerRegForm.controls['checkPassword'].errors['pattern']">Pattern allowed: [a-zA-Z ]+</span>
+    </span>
+    <br />
+    <input type="submit" value="Register" [disabled]="!managerRegForm.valid">
+</form>

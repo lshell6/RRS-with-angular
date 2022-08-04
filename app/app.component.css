@@ -1,0 +1,57 @@
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+h3{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+body{
+    background-color:blanchedalmond;
+    height:100%;
+    width: 100%;
+}
+/*HEADER*/
+/* Style the header with a grey background and some padding */
+.header {
+    overflow: hidden;
+    padding: 20px 10px;
+  }
+  
+  /* Style the header links */
+  .header a {
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+    justify-content: 50px;
+    display: inline;
+    position: relative;
+    top: 50%;
+    left:40%;
+  }
+  
+  /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+  .header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  /* Change the background color on mouse-over */
+  .header a:hover {
+    background-color: rgb(182, 181, 181);
+    color: black;
+  }
+  
+  /* Style the active/current link*/
+  .header a.active {
+    background-color: black;
+    color: rgb(182, 181, 181);
+  }
+  
+  .headers{
+      color: rgb(182, 181, 181);
+  }

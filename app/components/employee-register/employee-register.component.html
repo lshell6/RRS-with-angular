@@ -1,0 +1,37 @@
+<h1>Employee Registration</h1>
+
+<form (submit)="onEmpRegFormSubmit()" [formGroup]="employeeRegForm">
+    <label>Enter Name: </label>
+    <input type="text" name="name" formControlName="name">
+    <span *ngIf="employeeRegForm.controls['name'].invalid
+    && employeeRegForm.controls['name'].touched">
+        <span *ngIf="employeeRegForm.controls['name'].errors['required']">Name is required</span>
+        <span *ngIf="employeeRegForm.controls['name'].errors['pattern']">Pattern allowed: [a-zA-Z ]+</span>
+    </span>
+    <br />
+    <label>Enter Username: </label>
+    <input type="text" name="username" formControlName="username">
+    <span *ngIf="employeeRegForm.controls['username'].invalid
+    && employeeRegForm.controls['username'].touched">
+        <span *ngIf="employeeRegForm.controls['username'].errors['required']">Username is required</span>
+        <span *ngIf="employeeRegForm.controls['username'].errors['pattern']">Pattern allowed: [a-zA-Z ]+</span>
+    </span>
+    <br />
+    <label>Enter Password: </label>
+    <input type="text" name="password" formControlName="password">
+    <span *ngIf="employeeRegForm.controls['password'].invalid
+    && employeeRegForm.controls['password'].touched">
+        <span *ngIf="employeeRegForm.controls['password'].errors['required']">Password is required</span>
+        <span *ngIf="employeeRegForm.controls['password'].errors['pattern']">Pattern allowed: [a-zA-Z ]+</span>
+    </span>
+    <br />
+    <label>Enter Password Again: </label>
+    <input type="text" name="checkPassword" formControlName="checkPassword">
+    <span *ngIf="employeeRegForm.controls['checkPassword'].invalid
+    && employeeRegForm.controls['checkPassword'].touched">
+        <span *ngIf="employeeRegForm.controls['checkPassword'].errors['required']">Password check is required</span>
+        <span *ngIf="employeeRegForm.controls['checkPassword'].errors['pattern']">Pattern allowed: [a-zA-Z ]+</span>
+    </span>
+    <br />
+    <input type="submit" value="Register" [disabled]="!employeeRegForm.valid">
+</form>

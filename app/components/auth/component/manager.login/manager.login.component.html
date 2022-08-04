@@ -1,0 +1,19 @@
+<h1>Login</h1>
+{{message}}
+<form (submit)="onMgrFormSubmit()" [formGroup]="mgrLoginForm">
+    <label>Enter Username: </label>
+    <input type="text" name="username" formControlName="username">
+    <span *ngIf="mgrLoginForm.controls['username'].invalid
+          && mgrLoginForm.controls['username'].touched">
+      <span *ngIf="mgrLoginForm.controls['username'].errors['required']"> Usernameame is Required</span>
+    </span>
+    <br /><br />
+    <label>Enter Password: </label>
+    <input type="text" name="password" formControlName="password">
+    <span *ngIf="mgrLoginForm.controls['password'].invalid
+          && mgrLoginForm.controls['password'].touched">
+      <span *ngIf="mgrLoginForm.controls['password'].errors['required']"> Password is Required</span>
+    </span>
+    <br /><br />
+    <input type="submit" value="Login" [disabled]="!mgrLoginForm.valid">
+  </form>
