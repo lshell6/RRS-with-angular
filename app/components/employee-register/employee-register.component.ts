@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-register',
@@ -8,7 +9,7 @@ import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 })
 export class EmployeeRegisterComponent implements OnInit {
   employeeRegForm: FormGroup;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.employeeRegForm=new FormGroup({
@@ -24,5 +25,6 @@ export class EmployeeRegisterComponent implements OnInit {
         //return them back to the form
       //else display main emp page
       console.log(this.employeeRegForm.value);
+      this.router.navigateByUrl('/employee/login');
   }
 }
